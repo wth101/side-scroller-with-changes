@@ -3,6 +3,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.vy = -200
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile13, function (sprite, location) {
+    game.gameOver(true)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 6))
     info.changeLifeBy(-1)
